@@ -1,26 +1,34 @@
-#include <strings.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 13:12:59 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 18:38:57 by cterrasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <strings.h>
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char   *str;
+	int	i;
 
-    str = (unsigned char *)s;
-    while(n-- > 0)
-        *str++ = '\0';
+	i = 0;
+	while (n--)
+		((unsigned char *)s)[i++] = '\0';
 }
 
-int main(void)
+int	main(void)
 {
-    char buffer1[] = "This is a test";
-    char buffer2[] = "This is a test";
-    printf("Original:\n");
-    printf("Before: :%s:\n", buffer1);
-    bzero(buffer1, 4);
-    printf("After: :%s:\n", buffer1);
-    printf("\nMine:\n");
-    printf("Before: :%s:\n", buffer2);
-    ft_bzero(buffer2, 4);
-    printf("After: :%s:\n", buffer2);
-    return (0);
+	char	s1[] = "Testing";
+	char	s2[] = "Testing";
+	ft_bzero(s1, 4);
+	bzero(s2, 4);
+	printf("Mine: %s\n", s1);
+	printf("Original: %s\n", s2);
+	return (0);
 }

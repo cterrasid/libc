@@ -1,29 +1,39 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 18:33:39 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 18:48:28 by cterrasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <string.h>
 
-void    *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char   *d_str;
-    unsigned char   *s_str;
+	int	i;
 
-    d_str = (unsigned char *)dest;
-    s_str = (unsigned char *)src;
-    while (n-- > 0)
-        *d_str++ = *s_str++;
+	i = 0;
+	while (n--)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
 }
 
-int main(void)
+int	main(void)
 {
-    unsigned char str1[] = "This is a test";
-    unsigned char str2[] = "This is a test";
-    size_t  size = 4;
-    printf("Original:\n");
-    printf("Before: :%s:\n", str1);
-    memcpy(str1, &str1[10], size);
-    printf("After: :%s:\n", str1);
-    printf("\nMine:\n");
-    printf("Before: :%s:\n", str2);
-    ft_memcpy(str2, &str2[10], size);
-    printf("After: :%s:\n", str2);
-    return (0);
+	char	dest1[] = "Testing";
+	char	src1[] = "Mango";
+	char	dest2[] = "Testing";
+	char	src2[] = "Mango";
+	size_t	n = 4;
+	printf("Original: :%s:\n", memcpy(dest1, src1, n));
+	printf("Mine: :%s:\n", ft_memcpy(dest2, src2, n));
+	return (0);
 }

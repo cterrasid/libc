@@ -1,27 +1,35 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 17:48:31 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 18:39:25 by cterrasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <string.h>
 
-void    *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned char   *ptr;
+	int	i;
 
-    ptr = s;
-    while(n-- > 0)
-        *ptr++ = c;
-    return (s);
+	i = 0;
+	while (n--)
+		((unsigned char *)s)[i++] = (unsigned char)c;
+	return (s);
 }
 
-int main(void)
+int	main(void)
 {
-    char buffer1[] = "This is a test";
-    char buffer2[] = "This is a test";
-    printf("Original:\n");
-    printf("Before: :%s:\n", buffer1);
-    memset(buffer1, '*', 4);
-    printf("After: :%s:\n", buffer1);
-    printf("\nMine:\n");
-    printf("Before: :%s:\n", buffer2);
-    ft_memset(buffer2, '*', 4);
-    printf("After: :%s:\n", buffer2);
-    return (0);
+	char	s1[] = "Testing";
+	char	s2[] = "Testing";
+	int		c = '*';
+	size_t	n = 4;
+	printf("Original: :%s:\n", memset(s1, c, n));
+	printf("Mine: :%s:\n", ft_memset(s2, c, n));
+	return (0);
 }
