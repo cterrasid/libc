@@ -1,22 +1,41 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 20:42:27 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 21:04:02 by cterrasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    *ft_memmove(void *dest, const void *src, size_t n)
+#include <stdio.h>
+#include <string.h>
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	int				i;
+	unsigned char	*aux;
+
+	i = 0;
+	while (n--)
+	{
+		aux = ((unsigned char *)src);
+		((unsigned char *)dest)[i] = aux[i];
+		i++;
+	}
+	return (dest);
 }
 
-int main(void)
+int	main(void)
 {
-    unsigned char str1[] = "This is a test";
-    // unsigned char str2[] = "This is a test";
-    size_t  size = 4;
-    printf("Original:\n");
-    printf("Before: :%s:\n", str1);
-    memmove(str1, &str1[10], size);
-    printf("After: :%s:\n", str1);
-    // printf("\nMine:\n");
-    // printf("Before: :%s:\n", str2);
-    // ft_memmove(str2, &str2[10], size);
-    // printf("After: :%s:\n", str2);
-    return (0);
+	char	dest1[] = "Testing";
+	char	dest2[] = "Testing";
+	char	src1[] = "Mango";
+	char	src2[] = "Mango";
+	size_t	n = 5;
+	printf("Original: :%s:\n", memmove(dest1, src1, n));
+	printf("Mine: :%s:\n", ft_memmove(dest2, src2, n));
+	return (0);
 }
