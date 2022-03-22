@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 16:56:48 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 20:06:55 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/22 17:48:31 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 18:39:25 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(char *s)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (*s++)
-		i++;
-	return (i);
+	while (n--)
+		((unsigned char *)s)[i++] = (unsigned char)c;
+	return (s);
 }
 
 int	main(void)
 {
-	char	s[] = "Hola";
-	printf("Original: %lu\n", strlen(s));
-	printf("Mine: %zu\n", ft_strlen(s));
+	char	s1[] = "Testing";
+	char	s2[] = "Testing";
+	int		c = '*';
+	size_t	n = 4;
+	printf("Original: :%s:\n", memset(s1, c, n));
+	printf("Mine: :%s:\n", ft_memset(s2, c, n));
 	return (0);
 }

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 17:58:20 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 12:52:31 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/22 18:49:21 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 20:31:09 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (*s++)
@@ -23,35 +23,34 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
 	size_t	s_len;
-	size_t	d_len;
 
-	d_len = ft_strlen(dst);
-	s_len = ft_strlen(src);
 	i = 0;
-	j = d_len;
-	if (size <= d_len)
-		return (s_len + size);
-	while (src[i] && i < size - d_len - 1)
-		dst[j++] = src[i++];
-	dst[j] = '\0';
-	return (d_len + s_len);
+	s_len = ft_strlen(src);
+	if (size < 1)
+		return (s_len);
+	while (src[i] != '\0' && i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (s_len);
 }
 
-int main(void)
+int	main(void)
 {
-    char    dest1[50] = "Hola";
-    char    src1[7] = "Pelota";
-    char    dest2[50] = "Hola";
-    char    src2[7] = "Pelota";
-    size_t  size = 8;
-    printf("Original: %zu\n", ft_strlcat(dest1, src1, size));
+    char		dest1[50] = "Hola";
+    const char	src1[7] = "Pelota";
+    char		dest2[50] = "Hola";
+    const char	src2[7] = "Pelota";
+    size_t		size = 6;
+    printf("Original: %zu\n", strlcpy(dest1, src1, size));
     printf("dest: %s\n", dest1);
-    printf("Mine: %zu\n", strlcat(dest2, src2, size));
+    printf("Mine: %zu\n", ft_strlcpy(dest2, src2, size));
     printf("dest: %s\n", dest2);
     return (0);
 }

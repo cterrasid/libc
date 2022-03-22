@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 16:56:48 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 20:06:55 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/22 18:33:39 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/22 18:48:28 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(char *s)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (*s++)
+	while (n--)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
-	return (i);
+	}
+	return (dest);
 }
 
 int	main(void)
 {
-	char	s[] = "Hola";
-	printf("Original: %lu\n", strlen(s));
-	printf("Mine: %zu\n", ft_strlen(s));
+	char	dest1[] = "Testing";
+	char	src1[] = "Mango";
+	char	dest2[] = "Testing";
+	char	src2[] = "Mango";
+	size_t	n = 4;
+	printf("Original: :%s:\n", memcpy(dest1, src1, n));
+	printf("Mine: :%s:\n", ft_memcpy(dest2, src2, n));
 	return (0);
 }
