@@ -6,12 +6,11 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:33:39 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 18:48:28 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:44:52 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -26,14 +25,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int	main(void)
-{
-	char	dest1[] = "Testing";
-	char	src1[] = "Mango";
-	char	dest2[] = "Testing";
-	char	src2[] = "Mango";
-	size_t	n = 4;
-	printf("Original: :%s:\n", memcpy(dest1, src1, n));
-	printf("Mine: :%s:\n", ft_memcpy(dest2, src2, n));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	dest1[] = "Testing";
+// 	char	src1[] = "Mango";
+// 	char	dest2[] = "Testing";
+// 	char	src2[] = "Mango";
+// 	size_t	n = 4;
+// 	// printf("Original: :%s:\n", memcpy(dest1, src1, n));
+// 	printf("Mine: :%s:\n", ft_memcpy(dest2, src2, n));
+// 	return (0);
+// }
