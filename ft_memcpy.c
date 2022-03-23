@@ -6,12 +6,11 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:33:39 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 18:48:28 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/23 14:56:54 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

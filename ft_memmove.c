@@ -6,12 +6,11 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 20:42:27 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 21:04:02 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/23 14:57:00 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

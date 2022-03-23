@@ -6,12 +6,11 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:48:49 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 13:02:42 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/23 14:56:08 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

@@ -6,12 +6,11 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:58:20 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/22 12:52:31 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/23 14:57:13 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(char *s)
 {
