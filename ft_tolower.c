@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:43:08 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/23 14:57:34 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:21:48 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-int	main(void)
-{
-	int	c = 'a';
-	printf("Mine: %i\n", ft_tolower(c));
-	printf("Original: %i\n", tolower(c));
-	return (0);
-}
+// int	main(void)
+// {
+// 	int	c = 'a';
+// 	printf("Mine: %i\n", ft_tolower(c));
+// 	printf("Original: %i\n", tolower(c));
+// 	return (0);
+// }

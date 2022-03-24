@@ -6,13 +6,13 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:56:48 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/23 14:57:23 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/24 18:34:47 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -22,10 +22,10 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-int	main(void)
-{
-	char	s[] = "Hola";
-	printf("Original: %lu\n", strlen(s));
-	printf("Mine: %zu\n", ft_strlen(s));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	s[] = "Hola";
+// 	printf("Original: %lu\n", strlen(s));
+// 	printf("Mine: %zu\n", ft_strlen(s));
+// 	return (0);
+// }
