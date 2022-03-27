@@ -1,16 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/27 17:05:08 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/27 20:22:13 by cterrasi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (*little == '\0')
-		return (*big);
-	while (len--)
+	size_t	n_len;
+
+	n_len = ft_strlen(needle);
+	if (n_len == 0)
+		return ((char *)haystack);
+	while (*haystack && len >= n_len)
 	{
+		if (*haystack == *needle && ft_memcmp(haystack, needle, n_len) == 0)
+			return ((char *)haystack);
+		haystack++;
+		len--;
 	}
 	return (NULL);
 }
 
-int	main(void)
-{
-	return (0);
-}
+// int	main(void)
+// {
+// 	const char haystack[] = "aaabcabcd";
+// 	const char needle[] = "cd";
+// 	size_t len = 8;
+// 	printf("strnstr: %s\n", ft_strnstr(haystack, needle, len));
+// 	printf("strnstr: %d\n", strnstr(haystack, needle, len));
+// 	printf("memcmp: %d\n", ft_memcmp(haystack, needle, 2));
+// 	printf("strncmp: %d\n", ft_strncmp(haystack, needle, 2));
+// 	return (0);
+// }
