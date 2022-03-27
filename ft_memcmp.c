@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 22:27:43 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/27 00:11:20 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/27 19:47:15 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	str1 = s1;
 	str2 = s2;
-	while (i < n)
+	while (n--)
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
