@@ -17,6 +17,11 @@ static int	is_whitespace(int c)
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
+static int  is_int(long int n)
+{
+    return (!(n > 2147483647 || n < -2147483648));
+}
+
 int	ft_atoi(const char *nptr)
 {
 	long int	num;
@@ -37,10 +42,14 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(*nptr))
 	{
 		num = num * 10 + *nptr - '0';
-		if (num * sign < -2147483648)
+		if (!is_int(num * sign))
 			return (0);
-		else if (num * sign > 2147483647)
+		else
 			return (-1);
+		// if (num * sign < -2147483648)
+		// 	return (0);
+		// else if (num * sign > 2147483647)
+		// 	return (-1);
 		nptr++;
 	}
 	return (num * sign);
