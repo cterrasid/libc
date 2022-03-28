@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:42:59 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/26 22:19:59 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:54:24 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // 	char s[] = "Clarette";
 // 	int	c = 'C';
 // 	size_t n = 4;
-// 	printf("Original: %s\n", memchr(s, c, n));
+// 	// printf("Original: %s\n", memchr(s, c, n));
 // 	printf("Mine: %s\n", ft_memchr(s, c, n));
+// 	// system("leaks a.out");
 // 	return (0);
 // }

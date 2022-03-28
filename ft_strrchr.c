@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 17:00:23 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/26 19:39:32 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:16:08 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	*ft_strrchr(const char *s, int c)
 // 	int	c = '\0';
 // 	printf("Original: %s\n", strrchr(s, c));
 // 	printf("Mine: %s\n", ft_strrchr(s, c));
+	// system("leaks a.out");
 // 	return (0);
 // }

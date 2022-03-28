@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:58:20 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/24 18:27:46 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:16:29 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 //     printf("dest: %s\n", dest1);
 //     printf("Mine: %zu\n", strlcat(dest2, src2, size));
 //     printf("dest: %s\n", dest2);
+	// system("leaks a.out");
 //     return (0);
 // }

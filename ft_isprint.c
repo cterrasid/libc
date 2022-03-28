@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 12:58:49 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/23 20:41:27 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:16:18 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	ft_isprint(int c)
 // 	int	c = 127;
 // 	printf("Mine: %i\n", ft_isprint(c));
 // 	// printf("Original: %i\n", isprint(c));
+	// system("leaks a.out");
 // 	return (0);
 // }

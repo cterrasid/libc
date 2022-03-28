@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:33:39 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/24 19:25:53 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:56:22 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 // int	main(void)
 // {
-// 	char	dest1[5] = "\0";
-// 	char	src1[5] = "\0";
+// 	// char	dest1[5] = "\0";
+// 	// char	src1[5] = "\0";
 // 	char	dest2[] = "\0";
 // 	char	src2[] = "\0";
 // 	size_t	n = 0;
-// 	printf("Original: :%s:\n", memcpy(dest1, src1, n));
+// 	// printf("Original: :%s:\n", memcpy(dest1, src1, n));
 // 	printf("Mine: :%s:\n", ft_memcpy(dest2, src2, n));
+// 	system("leaks a.out");
 // 	return (0);
 // }

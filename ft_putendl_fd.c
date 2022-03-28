@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/28 00:53:19 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/28 02:42:44 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/03/28 02:48:16 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
 
 // int	main(void)
 // {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
+// 	char	s[] = "Hola 42";
+// 	int fd = 1;
+// 	ft_putendl_fd(s, fd);
 // 	return (0);
 // }

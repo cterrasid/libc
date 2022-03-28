@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:12:59 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/23 18:43:37 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:35:55 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_bzero(void *s, size_t n)
 // 	ft_bzero(s1, 4);
 // 	// bzero(s2, 4);
 // 	printf("Mine: %s\n", s1);
-// 	printf("Original: %s\n", s2);
+// 	// printf("Original: %s\n", s2);
+// 	// system("leaks a.out");
 // 	return (0);
 // }

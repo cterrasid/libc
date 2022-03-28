@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:36:01 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/23 18:21:53 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:15:12 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_toupper(int c)
 // 	int	c = 'a';
 // 	printf("Mine: %i\n", ft_toupper(c));
 // 	printf("Original: %i\n", toupper(c));
+	// system("leaks a.out");
 // 	return (0);
 // }

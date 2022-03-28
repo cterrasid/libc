@@ -6,11 +6,16 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:48:49 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/24 09:26:08 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 04:25:37 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	is_whitespace(int c)
+{
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
+}
 
 int	ft_atoi(const char *nptr)
 {
@@ -19,7 +24,7 @@ int	ft_atoi(const char *nptr)
 
 	num = 0;
 	sign = 1;
-	while (*nptr == ' ' || (*nptr >= '\t' && *nptr <= '\r'))
+	while (is_whitespace(*nptr))
 		nptr++;
 	if (*nptr == '-' && (ft_isdigit(*(nptr + 1))))
 	{

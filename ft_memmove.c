@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 20:42:27 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/24 19:33:03 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/03/28 00:57:40 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 // int	main(void)
 // {
 // 	// char	dest1[] = "Testing";
-// 	char	dest2[] = "Testing";
 // 	// char	src1[] = "Mango";
+// 	char	dest2[] = "Testing";
 // 	char	src2[] = "Mango";
 // 	size_t	n = 5;
 // 	// printf("Original: :%s:\n", memmove(dest1, src1, n));
 // 	printf("Mine: :%s:\n", ft_memmove(dest2, src2, n));
+// 	// system("leaks a.out");
 // 	return (0);
 // }
