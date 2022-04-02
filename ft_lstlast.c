@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:21:57 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/31 16:48:23 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/04/01 04:00:33 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is an alphanumeric character or not.	  */
+/* Return the last element of a list.									      */
 /* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }
-
-// int	main(void)
-// {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
-// 	return (0);
-// }

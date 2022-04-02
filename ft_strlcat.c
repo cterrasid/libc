@@ -6,9 +6,15 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:58:20 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/28 00:16:29 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:56:42 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* -------------------------------------------------------------------------- */
+/* Appends at most 'size - strlen(dst) - 1' bytes of 'src' to 'dst'.		  */
+/* Returns the combined length of 'src' and 'dst' (not counting their		  */
+/* (terminating null characters).											  */
+/* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 

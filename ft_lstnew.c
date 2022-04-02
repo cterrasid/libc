@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:21:57 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/31 16:47:11 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/04/02 13:31:08 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is an alphanumeric character or not.	  */
+/* Reserve memory with malloc() nd return a new element.					  */
+/* The new element's content is initialized with the parameter 'content'.	  */
 /* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstnew(void *content)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
 
 // int	main(void)
 // {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
+// 	t_list	*new;
+
+// 	new = ft_lstnew("Dede");
+// 	printf("%s\n", new->content);
 // 	return (0);
 // }

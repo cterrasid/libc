@@ -6,9 +6,15 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 21:22:56 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/28 01:36:55 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:20:34 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* -------------------------------------------------------------------------- */
+/* Allocates memory for an array of 'count' elements (with 'size'			  */
+/* bytes each), and returns a pointer to the allocated memory.				  */
+/* Every position of memory is set to zero ('\0').							  */
+/* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 

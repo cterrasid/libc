@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:21:57 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/31 16:48:13 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/04/01 06:06:23 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is an alphanumeric character or not.	  */
+/* Loops the 'lst' list and apply the function 'f' to the content of each	  */
+/* element.																	  */
 /* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-
-// int	main(void)
-// {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
-// 	return (0);
-// }

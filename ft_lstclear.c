@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:21:57 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/31 16:47:44 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/04/02 17:29:04 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is an alphanumeric character or not.	  */
+/* Removes and free each element of the given list, using the 'del' function  */
+/* and free().																  */
+/* Finally, the pointer to the list must be set to NULL.					  */
 /* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
-}
+	t_list	*aux;
 
-// int	main(void)
-// {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
-// 	return (0);
-// }
+	while (*lst)
+	{
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
+	}
+	*lst = NULL;
+}

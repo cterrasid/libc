@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:21:57 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/31 16:48:33 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/04/02 15:43:18 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is an alphanumeric character or not.	  */
+/* Loops a list 'lst' and applies the function 'f' to the content of each	  */
+/* element.																	  */
+/* The 'f' function will create a new list with the content of an element.	  */
+/* The 'del' function will remove the content of an element if needed.		  */
 /* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
 }
-
-// int	main(void)
-// {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
-// 	return (0);
-// }

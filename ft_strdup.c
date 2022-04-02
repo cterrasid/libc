@@ -6,9 +6,15 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:31:36 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/28 02:03:34 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:45:40 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* -------------------------------------------------------------------------- */
+/* Returns a pointer to a null-terminated byte string, which is a duplicate	  */
+/* of the string pointed by 's'.											  */
+/* The memory obtained  is done dynamically using malloc().					  */
+/* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 

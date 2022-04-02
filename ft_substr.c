@@ -6,41 +6,52 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 04:04:09 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/28 05:55:03 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/02 18:13:10 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* -------------------------------------------------------------------------- */
+/* Allocates memory with malloc(), to return a new string based on 's'.		  */
+/* The new string begins at 'start' and has a max length of 'len'.			  */
+/* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
-	size_t			s_len;
+	size_t			slen;
+	size_t			s_in_start_len;
 	char			*str;
+	char			*ref_str;
 
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	ref_str = (char *)s;
+	s_in_start_len = ft_strlen(ref_str + start);
+	if (slen < start)
+		len = 0;
+	if (s_in_start_len < len)
+		len = s_in_start_len;
 	i = 0;
-	s_len = ft_strlen(s);
-	str = (char *)malloc(sizeof(*s) * len + 1);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
-	if (s_len < start)
-		len = 0;
-	if ((s_len + start) < len)
-		len = s_len + start;
 	while (len--)
-		str[i++] = s[start++];
+		str[i++] = ref_str[start++];
 	str[i] = '\0';
 	return (str);
 }
 
 // int	main(void)
 // {
-// 	const char		s[] = "i just want this part #############";
-// 	unsigned int	start = 5;
-// 	size_t			len = 10;
+// 	const char		*s = ft_strdup("1");
+// 	unsigned int	start = 42;
+// 	size_t			len = 1;
 // 	char			*substr = ft_substr(s, start, len);
-// 	printf("%s\n", substr);
-// 	free(substr);
+// 	printf("substr: %s\n", substr);
+// 	// free(substr);
 // 	// system("leaks a.out");
 // 	return (0);
 // }

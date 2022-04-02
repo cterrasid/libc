@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:39:58 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:21:57 by cterrasi         ###   ########.fr       */
+/*   Created: 2022/03/31 16:47:26 by cterrasi          #+#    #+#             */
+/*   Updated: 2022/04/02 14:41:07 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is an alphanumeric character or not.	  */
+/* Add the element 'new' to the end of the list.						      */
 /* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	if (*lst == NULL)
+		*lst = new;
+	else
+		(ft_lstlast(*lst))->next = new;
 }
 
 // int	main(void)
 // {
-// 	int	c = 'a';
-// 	printf("Mine: %i\n", ft_isalnum(c));
-// 	// printf("Original: %i\n", isalnum(c));
-// 	// system("leaks a.out");
+// 	t_list	*last = ft_lstnew("Last");
+// 	t_list	*new = ft_lstnew("New");
+
+// 	last = NULL;
+// 	ft_lstadd_back(&last, new);
+// 	printf("%s\n", last->content);
 // 	return (0);
 // }
