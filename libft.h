@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:45:56 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/03/31 16:34:28 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/07 13:18:49 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
-# include <stdio.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 /* ------ */
 /* PART I */
@@ -67,6 +59,12 @@ void	ft_putnbr_fd(int n, int fd);
 /* ----- */
 /* BONUS */
 /* ----- */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
