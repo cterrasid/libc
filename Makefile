@@ -6,10 +6,11 @@
 #    By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 19:45:55 by cterrasi          #+#    #+#              #
-#    Updated: 2022/04/01 00:02:54 by cterrasi         ###   ########.fr        #
+#    Updated: 2022/04/07 15:35:04 by cterrasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#	VARIABLES
 SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				ft_isascii.c ft_isdigit.c ft_toupper.c ft_tolower.c ft_isprint.c \
 				ft_memcmp.c ft_memchr.c ft_memcpy.c ft_memmove.c ft_memset.c \
@@ -26,20 +27,25 @@ BONUS_SRCS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c \
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
+B			=	.
+
 CC			=	gcc
 
 CC_FLAGS	=	-Wall -Werror -Wextra
 
-RM_RF		=	rm -rfv
+RM_RF		=	rm -rf
 
 NAME		=	libft.a
 
+#	RULES
 all:		$(NAME)
+
+bonus:		$(B)
 
 $(NAME):	$(OBJS)
 			ar crs $(NAME) $(OBJS)
 
-bonus:		$(OBJS) $(BONUS_OBJS)
+$(B):		$(OBJS) $(BONUS_OBJS)
 			ar crs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
