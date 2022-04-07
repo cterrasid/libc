@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 13:58:55 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 18:22:41 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/07 13:18:41 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,83 @@ static size_t	ft_count_words(const char *s, char c)
 	return (count);
 }
 
-char	**ft_split(const char *s, char c)
+static char	*ft_get_word(char const *s, char c)
 {
-	size_t	words;
-	char	*strs;
-	int		i;
+	size_t	i;
+	size_t	len;
+	char	*word;
 
-	words = ft_count_words(s, c);
-	strs = (char *)malloc(sizeof(char) * words);
-	if (!strs)
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (!word)
 		return (NULL);
-	printf("words: %lu\n", words);
-	return ((char **)s);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
 }
 
-int	main(void)
+static char	*ft_set_word(int i, char const *s, char c, char **result)
 {
-	const char	s[] = "   Clarette Terrasi Diaz ";
-
-	ft_split(s, ' ');
-	// printf("split 1: %c\n", s[0]);
-	// printf("split 2: %c\n", s[1]);
-	// printf("split 3: %c\n", s[2]);
-	return (0);
+	result[i] = ft_get_word(s, c);
+	if (!result[i])
+	{
+		while (i > 0)
+		{
+			i--;
+			free(result[i]);
+		}
+		free(result);
+		return (NULL);
+	}
+	return (result[i]);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	size_t	words;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	words = ft_count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	while (i < words)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+			result[i] = ft_set_word(i, s, c, result);
+		while (*s && *s != c)
+			s++;
+		i++;
+	}
+	result[i] = 0;
+	return (result);
+}
+
+// int	main(void)
+// {
+// 	const char	s[] = "Clarette Terrasi Diaz";
+// 	size_t words = ft_count_words(s, ' ');
+// 	size_t i = 0;
+// 	char	**tab = ft_split(s, ' ');
+
+// 	while (i < words)
+// 	{
+// 		printf("string %zu : %s\n", i, tab[i]);
+// 		i++;
+// 	}
+// 	system ("leaks a.out");
+// 	return (0);
+// }
