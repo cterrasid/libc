@@ -6,14 +6,9 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 04:04:09 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 18:13:10 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:16:19 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* -------------------------------------------------------------------------- */
-/* Allocates memory with malloc(), to return a new string based on 's'.		  */
-/* The new string begins at 'start' and has a max length of 'len'.			  */
-/* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
@@ -43,15 +38,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	const char		*s = ft_strdup("1");
-// 	unsigned int	start = 42;
-// 	size_t			len = 1;
-// 	char			*substr = ft_substr(s, start, len);
-// 	printf("substr: %s\n", substr);
-// 	// free(substr);
-// 	// system("leaks a.out");
-// 	return (0);
-// }
