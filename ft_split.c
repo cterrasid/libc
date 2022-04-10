@@ -37,7 +37,7 @@ static void	*ft_free_memory(unsigned int i, char *str)
 {
 	while (i)
 	{
-		free(&str[i]);
+		free(str[i]);
 		i--;
 	}
 	free(str);
