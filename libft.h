@@ -88,7 +88,7 @@ int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
-* @brief Checks the first 'n' bytes of the memory area pointed by 's', 
+* @brief Checks the first 'n' bytes of the memory area pointed by 's',
 * until find the first occurrence of 'c'.
 */
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -96,22 +96,22 @@ void	*ft_memchr(const void *s, int c, size_t n);
 /**
 * @brief Copies 'n' bytes of the memory area pointed by 'src',
 * to the memory area pointed by 'dest'.
-* @param dst Memory area where will be copied 'n' bytes of 'src'.													
+* @param dst Memory area where will be copied 'n' bytes of 'src'.
 * @param src Memory area from where will be copied 'n' bytes
-* to 'dst'.													
-* @param n Bytes of 'src' which will be copied to 'dst'.													
-* @returns Pointer to 'dst'.													
+* to 'dst'.
+* @param n Bytes of 'src' which will be copied to 'dst'.
+* @returns Pointer to 'dst'.
 */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 /**
 * @brief Copies 'n' bytes of the memory area pointed by 'src',
 * to the memory area pointed by 'dest'. Allows overlapping.
-* @param dst Memory area where will be copied 'len' bytes of 'src'.													
+* @param dst Memory area where will be copied 'len' bytes of 'src'.
 * @param src Memory area from where will be copied 'len' bytes
-* to 'dst'.													
-* @param len Bytes of 'src' which will be copied to 'dst'.													
-* @returns Pointer to 'dst'.													
+* to 'dst'.
+* @param len Bytes of 'src' which will be copied to 'dst'.
+* @returns Pointer to 'dst'.
 */
 void	*ft_memmove(void *dest, const void *src, size_t len);
 
@@ -171,7 +171,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 /**
 * @brief Allocates memory with malloc(), to return a new string based on 's'.
-* The new string begins at 'start' and has a max length of 'len'.	
+* The new string begins at 'start' and has a max length of 'len'.
 * @returns Pointer to the obtained substring.
 */
 char	*ft_substr(const char *s, unsigned int start, size_t len);
@@ -185,18 +185,18 @@ char	*ft_strjoin(const char *s1, const char *s2);
 
 /**
 * @brief Allocates memory with malloc(), to return a copy of 's1' with the
-* characters of 'set', removed from the beginning and the end.	
+* characters of 'set', removed from the beginning and the end.
 * @returns Pointer to the trimmed string.
 */
 char	*ft_strtrim(const char *s1, const char *set);
 
 /**
 * @brief Split a string 's' into parts, according to a delimiter 'c'.
-* @param s String to split.													
-* @param c Delimiter.																										
-* @returns Pointer to an array of splitted words.													
+* @param str String to split.
+* @param delim Delimiter.
+* @returns Pointer to an array of splitted words.
 */
-char	**ft_split(char const *s, char c);
+char	**ft_split(const char *str, char delim);
 
 /**
 * @brief Allocates memory with malloc() and transform a number 'n' into a string.
@@ -278,7 +278,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
-* @brief Takes an element as a parameter and frees the memory of the element's 
+* @brief Takes an element as a parameter and frees the memory of the element's
 * content using the function 'del' (given as parameter).
 * Finally, frees the memory of the element.
 * The memory of 'next' must not be freed.
@@ -286,20 +286,20 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 /**
-* @brief Removes and free each element of the given list, 
+* @brief Removes and free each element of the given list,
 * using the 'del' function and free().
 * Finally, the pointer to the list must be set to NULL.
 */
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 
 /**
-* @brief Loops the 'lst' list and apply the function 'f' 
+* @brief Loops the 'lst' list and apply the function 'f'
 * to the content of each element.
 */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**
-* @brief Creates a copy of a list 'lst' and applies the function 'f' to the 
+* @brief Creates a copy of a list 'lst' and applies the function 'f' to the
 * content of each element of the copy.
 * The 'del' function will remove the content of an element if needed.
 * @returns A pointer to the beginning of the new list (the copy of 'lst').

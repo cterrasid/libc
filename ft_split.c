@@ -10,113 +10,78 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Allocate memory with malloc() and return an array of strings with each	  */
-/* words of 's'.															  */
-/* Every word is delimited by 'c'.											  */
-/* Every word in the array, must be nul-terminated with '\0'.				  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
-static size_t	ft_count_words(const char *s, char c)
+static size_t	ft_count_words(const char *str, char delim)
 {
 	size_t	count;
 	int		state;
 
 	count = 0;
 	state = 0;
-	while (*s)
+	while (*str)
 	{
-		if (*s == c)
+		if (*str == delim)
 			state = 0;
 		else if (state == 0)
 		{
 			state = 1;
 			count++;
 		}
-		s++;
+		str++;
 	}
 	return (count);
 }
 
-static char	*ft_get_word(char const *s, char c)
+static void	*ft_free_memory(unsigned int i, char *str)
 {
-	size_t	i;
-	size_t	len;
-	char	*word;
-
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	if (!word)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		word[i] = s[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
+	while (i)
+		free(&str[i--]);
+	free(str);
+	return (NULL);
 }
 
-static char	*ft_set_word(int i, char const *s, char c, char **result)
+static char	*ft_get_word(unsigned int i, const char *str, char delim, char **result)
 {
-	result[i] = ft_get_word(s, c);
+	const char	*word;
+
+	word = str;
+	while (*word && *word != delim)
+		word++;
+	result[i] = ft_substr(str, 0, (word - str));
 	if (!result[i])
 	{
-		while (i > 0)
-		{
-			i--;
-			free(result[i]);
-		}
-		free(result);
+		ft_striteri(result[i], ft_free_memory(i, result[i]));
 		return (NULL);
 	}
 	return (result[i]);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *str, char delim)
 {
-	char	**result;
-	size_t	words;
-	size_t	i;
+	char			**result;
+	size_t			words;
+	unsigned int	i;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	words = ft_count_words(s, c);
-	result = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!result)
-		return (NULL);
-	while (i < words)
+	if (str && delim)
 	{
-		while (*s == c)
-			s++;
-		if (*s)
-			result[i] = ft_set_word(i, s, c, result);
-		while (*s && *s != c)
-			s++;
-		i++;
+		i = 0;
+		words = ft_count_words(str, delim);
+		result = (char **)malloc(sizeof(char *) * (words + 1));
+		if (!result)
+			return (NULL);
+		while (i < words)
+		{
+			while (*str == delim)
+				str++;
+			if (*str)
+				result[i] = ft_get_word(i, str, delim, result);
+			while (*str && *str != delim)
+				str++;
+			i++;
+		}
+		result[i] = 0;
+		return (result);
 	}
-	result[i] = 0;
-	return (result);
+	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	const char	s[] = "Clarette Terrasi Diaz";
-// 	size_t words = ft_count_words(s, ' ');
-// 	size_t i = 0;
-// 	char	**tab = ft_split(s, ' ');
-
-// 	while (i < words)
-// 	{
-// 		printf("string %zu : %s\n", i, tab[i]);
-// 		i++;
-// 	}
-// 	system ("leaks a.out");
-// 	return (0);
-// }
