@@ -36,7 +36,10 @@ static size_t	ft_count_words(const char *str, char delim)
 static void	*ft_free_memory(unsigned int i, char *str)
 {
 	while (i)
-		free(&str[i--]);
+	{
+		free(&str[i]);
+		i--;
+	}
 	free(str);
 	return (NULL);
 }
@@ -51,7 +54,7 @@ static char	*ft_get_word(unsigned int i, const char *str, char delim, char **res
 	result[i] = ft_substr(str, 0, (word - str));
 	if (!result[i])
 	{
-		ft_striteri(result[i], ft_free_memory(i, result[i]));
+		ft_free_memory(i, result[i]);
 		return (NULL);
 	}
 	return (result[i]);
