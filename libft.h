@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdio.h>
 
 /**
 * @brief Transform the first numeric characters of a string 'nptr' in numbers.
@@ -172,9 +173,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 /**
 * @brief Allocates memory with malloc(), to return a new string based on 's'.
 * The new string begins at 'start' and has a max length of 'len'.
+* @param str The reference string to form the substring.
+* @param start The index of 'str' from which the substring will be created.
+* @param max_len The maximum length of the substring.
 * @returns Pointer to the obtained substring.
 */
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_substr(const char *str, unsigned int start, size_t max_len);
 
 /**
 * @brief Allocates memory with malloc() to create a new string,
