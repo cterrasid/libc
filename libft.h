@@ -138,8 +138,15 @@ char	*ft_strdup(const char *s);
 /**
 * @brief Locates the first occurrence of 'needle' in the first 'len' bytes of
 * 'haystack'.
+* @param haystack String where the 'needle' will be searched.
+* @param needle String to find in the 'haystack'.
+* @param max_len Maximum length of the 'haystack' to search the 'needle'.
+* @returns If 'needle' is empty, returns the 'haystack'.
+* - If 'needle' has been found in 'haystack', returns a pointer to
+* the first coincidence of 'needle' in 'haystack'.
+* - If 'needle' hasn't beeen found in 'haystack', returns NULL.
 */
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t max_len);
 
 /**
 * @brief Loops through the string 's' to find the	last occurrence of 'c'.
