@@ -10,44 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Appends at most 'size - strlen(dst) - 1' bytes of 'src' to 'dst'.		  */
-/* Returns the combined length of 'src' and 'dst' (not counting their		  */
-/* (terminating null characters).											  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
-	size_t	s_len;
-	size_t	d_len;
+	size_t	slen;
+	size_t	dlen;
 
-	d_len = ft_strlen((const char *)dst);
-	s_len = ft_strlen(src);
-	i = 0;
-	j = d_len;
-	if (size <= d_len)
-		return (s_len + size);
-	while (src[i] && i < size - d_len - 1)
-		dst[j++] = src[i++];
-	dst[j] = '\0';
-	return (d_len + s_len);
+	dlen = ft_strlen((const char *)dst);
+	slen = ft_strlen(src);
+	if (dstsize <= dlen)
+		return (slen + dstsize);
+	ft_memcpy(dst + dlen, src, dstsize - dlen);
+	dst[dstsize] = '\0';
+	return (dlen + slen);
 }
 
-// int main(void)
-// {
-//     char    dest1[50] = "Hola";
-//     char    src1[7] = "Pelota";
-//     char    dest2[50] = "Hola";
-//     char    src2[7] = "Pelota";
-//     size_t  size = 8;
-//     printf("Original: %zu\n", ft_strlcat(dest1, src1, size));
-//     printf("dest: %s\n", dest1);
-//     printf("Mine: %zu\n", strlcat(dest2, src2, size));
-//     printf("dest: %s\n", dest2);
-	// system("leaks a.out");
-//     return (0);
-// }
+int main(void)
+{
+    char    dest1[50] = "Hola";
+    char    src1[7] = "Pelota";
+    size_t  size = 10;
+    printf("ft_strlcat: %lu\n", ft_strlcat(dest1, src1, size));
+    printf("dest: %s\n", dest1);
+    return (0);
+}

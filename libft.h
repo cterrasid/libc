@@ -171,6 +171,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 /**
 * @brief Appends at most 'size - strlen(dst) - 1' bytes of 'src' to 'dst'.
+* @param dst The destination buffer.
+* @param src The string to append to 'dst'.
+* @param dstsize The size of the final string, including the NUL.
 * @returns The combined length of 'src' and 'dst' (not counting their
 * terminating null characters).
 */
