@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *str, int ch)
 {
-	size_t	s_len;
+	size_t	slen;
 
-	s_len = ft_strlen(s);
-	s += s_len;
-	if (c == '\0')
-		return ((char *)(s));
-	while (s_len--)
+	slen = ft_strlen(str);
+	str += slen;
+	if (ch == '\0')
+		return ((char *)(str));
+	while (slen--)
 	{
-		s--;
-		if (*s == (char)c)
-			return ((char *)(s));
+		str--;
+		if (*str == (char)ch)
+			return ((char *)(str));
 	}
 	return (NULL);
 }

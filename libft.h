@@ -148,10 +148,12 @@ char	*ft_strdup(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t max_len);
 
 /**
-* @brief Loops through the string 's' to find the	last occurrence of 'c'.
-* @returns Pointer to the character 'c'.
+* @brief Loops through the string 'str' to find the	last occurrence of 'ch'.
+* @param str The string where should be found the last occurrence of 'ch'.
+* @param ch The character to find in 'str'.
+* @returns Pointer to the character 'ch'.
 */
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strrchr(const char *str, int ch);
 
 /**
 * @brief Compares at most the first 'n' bytes of 's1' and 's2'.
