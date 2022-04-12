@@ -23,12 +23,13 @@
 int		ft_atoi(const char *nptr);
 
 /**
-* @brief Erase 'n' bytes of the memory area 's', by replacing it
+* @brief Erase 'n' bytes of the memory area 'mem', by replacing it
 * with zeros ('\0').
-* @param s Pointer to the memory area to erase.
-* @param n Bytes to be erased in 's'.
+* @param mem Pointer to the memory area to erase.
+* @param n Bytes to be erased in 'mem'.
+* @returns Nothing.
 */
-void	ft_bzero(void *s, size_t n);
+void	ft_bzero(void *mem, size_t n);
 
 /**
 * @brief Allocates memory for an array of 'count' elements (with 'size'
