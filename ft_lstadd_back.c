@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Add the element 'new' to the end of the list.						      */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
@@ -23,14 +19,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		(ft_lstlast(*lst))->next = new;
 }
-
-// int	main(void)
-// {
-// 	t_list	*last = ft_lstnew("Last");
-// 	t_list	*new = ft_lstnew("New");
-
-// 	last = NULL;
-// 	ft_lstadd_back(&last, new);
-// 	printf("%s\n", last->content);
-// 	return (0);
-// }

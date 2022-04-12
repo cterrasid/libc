@@ -311,6 +311,9 @@ t_list	*ft_lstlast(t_list *lst);
 
 /**
 * @brief Add the element 'new' to the end of the list.
+* @param lst The address to the pointer to the beginning of the list.
+* @param new A pointer to the new node to add in the end of the list.
+* @returns Nothing.
 */
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
