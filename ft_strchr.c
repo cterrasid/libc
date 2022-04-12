@@ -10,33 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Loops through the string 's' to find the	first occurrence of 'c'.		  */
-/* Returns a pointer to the character 'c'.									  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int ch)
 {
+	char	*s;
+	char	*c;
+
+	s = str;
+	c = ch;
 	while (*s)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
+		if (*s == c)
+			return (s);
 		s++;
 	}
 	if (c == '\0')
-		return ((char *)s);
+		return (s);
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	const char	s[] = "clarette";
-// 	int	c = 'c' + 256;
-// 	printf("%d\n", c);
-// 	// printf("Original: %s\n", strchr(s, c));
-// 	printf("Mine: %s\n", ft_strchr(s, c));
-// 	system("leaks a.out");
-// 	return (0);
-// }

@@ -129,10 +129,12 @@ void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memset(void *str, int ch, size_t n);
 
 /**
-* @brief Loops through the string 's' to find the first occurrence of 'c'.
-* @returns Pointer to the character 'c'.
+* @brief Loops through the string 'str' to find the first occurrence of 'ch'.
+* @param str The string to find 'ch'.
+* @param ch The character to find in 'str'.
+* @returns Pointer to the first occurence of 'ch' in 'str'.
 */
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *str, int ch);
 
 /**
 * @brief Duplicates the string 's'. The memory obtained
