@@ -21,17 +21,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	slen = ft_strlen(src);
 	if (dstsize <= dlen)
 		return (slen + dstsize);
-	ft_memcpy(dst + dlen, src, dstsize - dlen);
+	dst += dlen;
+	while (*src && dstsize)
+	{
+		*dst++ = *src++;
+		dstsize--;
+	}
 	dst[dstsize] = '\0';
 	return (dlen + slen);
-}
-
-int main(void)
-{
-    char    dest1[50] = "Hola";
-    char    src1[7] = "Pelota";
-    size_t  size = 10;
-    printf("ft_strlcat: %lu\n", ft_strlcat(dest1, src1, size));
-    printf("dest: %s\n", dest1);
-    return (0);
 }
