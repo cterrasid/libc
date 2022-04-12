@@ -205,6 +205,8 @@ char	*ft_substr(const char *str, unsigned int start, size_t max_len);
 /**
 * @brief Allocates memory with malloc() to create a new string,
 * based on the join	of 's1' and 's2'.
+* @param s1	The prefix string.
+* @param s2	The sufix string.
 * @returns Pointer to the string created from the join of 's1' and 's2'.
 */
 char	*ft_strjoin(const char *s1, const char *s2);
