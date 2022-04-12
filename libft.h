@@ -285,6 +285,9 @@ t_list	*ft_lstnew(void *content);
 
 /**
 * @brief Add the element 'new' to the beginning of the list.
+* @param lst The address to the pointer to the beginning of the list.
+* @param new A pointer to the new node to add in the front of the list.
+* @returns Nothing.
 */
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
