@@ -167,9 +167,12 @@ size_t	ft_strlen(const char *s);
 
 /**
 * @brief Copies a string 'src' to a destination buffer 'dst'.
-* @returns The length of 'srs'.
+* @param dst The string where will be copied 'size - 1' bytes of 'src'.
+* @param src The string to copy in 'dst'.
+* @param size The bytes of 'src' to copy in 'dst', including the NUL.
+* @returns The length of 'src'.
 */
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 /**
 * @brief Appends at most 'size - strlen(dst) - 1' bytes of 'src' to 'dst'.
