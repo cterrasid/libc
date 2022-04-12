@@ -20,9 +20,8 @@ char	*ft_strrchr(const char *str, int ch)
 	str += slen;
 	if (ch == '\0')
 		return ((char *)(str));
-	while (slen--)
+	while (str--)
 	{
-		str--;
 		if (*str == (char)ch)
 			return ((char *)(str));
 	}
