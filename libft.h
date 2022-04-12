@@ -167,6 +167,16 @@ char	*ft_strrchr(const char *str, int ch);
 
 /**
 * @brief Compares at most the first 'n' bytes of 's1' and 's2'.
+* @param s1	The string to compare with 's2'.
+* @param s2	The string to compare with 's1'.
+* @param n	The bytes to consider for the comparison.
+* @returns
+* - An int lower than 0, if 'n' bytes of 's1' are lower
+* than 'n' bytes of 's2'.
+* - An int bigger than 0, if 'n' bytes of 's1' are bigger
+* than 'n' bytes of 's2'.
+* - An int equal to 0, if 'n' is equal to zero
+* or if 's1' and 's2' are equal.
 */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
