@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Reserve memory with malloc() nd return a new element.					  */
-/* The new element's content is initialized with the parameter 'content'.	  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
@@ -30,12 +25,3 @@ t_list	*ft_lstnew(void *content)
 	}
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	t_list	*node;
-
-// 	node = ft_lstnew("Dede");
-// 	printf("%s\n", node->content);
-// 	return (0);
-// }

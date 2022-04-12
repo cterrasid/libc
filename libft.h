@@ -278,6 +278,7 @@ typedef struct s_list
 /**
 * @brief Reserve memory with malloc() nd return a new element.
 * The new element's content is initialized with the parameter 'content'.
+* @param content The content to fill the new node's content.
 * @returns A pointer to the new element.
 */
 t_list	*ft_lstnew(void *content);
