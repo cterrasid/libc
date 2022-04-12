@@ -238,10 +238,13 @@ char	**ft_split(const char *str, char delim);
 char	*ft_itoa(int n);
 
 /**
-* @brief Applies the function 'f' to each character of 's',
+* @brief Applies the function 'func' to each character of 'str',
 * to create a new string.
+* @param str The string to loop.
+* @param func The function to apply to each character of 'str'.
+* @returns The result string with the 'func' applied to all its characters.
 */
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char	*ft_strmapi(const char *str, char (*func)(unsigned int, char));
 
 /**
 * @brief Applies the function 'f' to each character of 's'. The first
