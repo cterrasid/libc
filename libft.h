@@ -216,6 +216,9 @@ char	*ft_strjoin(const char *s1, const char *s2);
 /**
 * @brief Allocates memory with malloc(), to return a copy of 's1' with the
 * characters of 'set', removed from the beginning and the end.
+* @param s1 String to trim, according to 'set'.
+* @param set Set of characters to remove from the beggining
+* and the end of 's1'.
 * @returns Pointer to the trimmed string.
 */
 char	*ft_strtrim(const char *s1, const char *set);
