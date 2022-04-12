@@ -116,9 +116,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 
 /**
-* @brief Fills the first 'n' bytes of 's' with 'c'.
+* @brief Fills the first 'n' bytes of 'str' with 'ch'.
+* @param str The string to replace with 'ch'.
+* @param ch The character to fill 'n' bytes of 'str'.
+* @param n The bytes of 'str' to replace with 'ch'.
+* @returns Nothing.
 */
-void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *str, int ch, size_t n);
 
 /**
 * @brief Loops through the string 's' to find the first occurrence of 'c'.

@@ -10,30 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Fills the first 'n' bytes of 's' with 'c'.								  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *str, int ch, size_t n)
 {
-	int	i;
+	unsigned char	*s;
+	unsigned char	*c;
 
-	i = 0;
+	s = str;
+	c = ch;
 	while (n--)
-		((unsigned char *)s)[i++] = (unsigned char)c;
-	return (s);
+		*s++ = c;
+	return (str);
 }
-
-// int	main(void)
-// {
-// 	// char	s1[] = "Testing";
-// 	char	s2[] = "Testing";
-// 	int		c = '*';
-// 	size_t	n = 4;
-// 	// printf("Original: :%s:\n", memset(s1, c, n));
-// 	printf("Mine: :%s:\n", ft_memset(s2, c, n));
-// 	system("leaks a.out");
-// 	return (0);
-// }
