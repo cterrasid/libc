@@ -10,34 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Checks the first 'n' bytes of the memory area pointed by 's', until find	  */
-/* the first occurrence of 'c'.												  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *str, int ch, size_t n)
 {
-	size_t	i;
+	unsigned char	*s;
+	unsigned char	c;
 
-	i = 0;
-	while (i < n)
+	s = str;
+	c = ch;
+	while (n--)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return ((void *)(s + i));
-		i++;
+		if (*s == c)
+			return ((void *)s);
+		s++;
 	}
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char s[] = "Clarette";
-// 	int	c = 'C';
-// 	size_t n = 4;
-// 	// printf("Original: %s\n", memchr(s, c, n));
-// 	printf("Mine: %s\n", ft_memchr(s, c, n));
-// 	// system("leaks a.out");
-// 	return (0);
-// }

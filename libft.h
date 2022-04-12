@@ -88,10 +88,13 @@ int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
-* @brief Checks the first 'n' bytes of the memory area pointed by 's',
-* until find the first occurrence of 'c'.
+* @brief Find the first occurrence of 'ch' in the first 'n' bytes
+* of the memory area pointed by 'str'.
+* @param str The memory area to find the first occurence of 'ch'.
+* @param ch The character to find in the first 'n' bytes of 'str'.
+* @param n The first bytes of 'str' to find 'ch'.
 */
-void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memchr(const void *str, int ch, size_t n);
 
 /**
 * @brief Copies 'n' bytes of the memory area pointed by 'src',
