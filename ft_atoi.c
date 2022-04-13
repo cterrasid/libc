@@ -6,13 +6,9 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:48:49 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 16:58:39 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:06:30 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* -------------------------------------------------------------------------- */
-/* Transform the first numeric characters of a string 'nptr' in numbers.	  */
-/* -------------------------------------------------------------------------- */
 
 #include "libft.h"
 
@@ -37,19 +33,11 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(*nptr))
 	{
 		num = num * 10 + *nptr - '0';
-		if (num * sign < -2147483648)
+		if (num * sign < INT_MIN)
 			return (0);
-		else if (num * sign > 2147483647)
+		else if (num * sign > INT_MAX)
 			return (-1);
 		nptr++;
 	}
 	return (num * sign);
 }
-
-// int	main(void)
-// {
-// 	const char	test[] = "-99999999999999999999999999";
-// 	printf("Original: %i\n", atoi(test));
-// 	printf("Mine: %i\n", ft_atoi(test));
-// 	return (0);
-// }
