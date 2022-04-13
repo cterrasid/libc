@@ -6,7 +6,7 @@
 #    By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 19:45:55 by cterrasi          #+#    #+#              #
-#    Updated: 2022/04/07 15:35:04 by cterrasi         ###   ########.fr        #
+#    Updated: 2022/04/13 03:39:28 by cterrasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 
 OBJS		=	$(SRCS:.c=.o)
 
-BONUS_SRCS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c \
-				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-				ft_lstlast.c
+BONUS_SRCS	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
+				ft_lstlast_bonus.c
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
