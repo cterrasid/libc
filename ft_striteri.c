@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Applies the function 'f' to each character of 's'. The first argument of	  */
-/* 'f', is the index of each character of 's'.								  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
@@ -30,15 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-// void *test(unsigned int i, char * s) {
-// 	*s += i;
-// }
-
-// int main(void)
-// {
-// 	 char	s[] = "Caracol";
-// 	 ft_striteri(s, test);
-// 	 printf("%s\n", s);
-// 	 return (0);
-// }

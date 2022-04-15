@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Allocates memory with malloc() and returns the number 'n' as a string.	  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 static size_t	ft_nbrlen(int n)
@@ -62,12 +58,3 @@ char	*ft_itoa(int n)
 	}
 	return (nstr);
 }
-
-// int	main(void)
-// {
-// 	printf("itoa: %s\n", ft_itoa(-0));
-// 	// printf("itoa: %s\n", ft_itoa(-623));
-// 	// printf("itoa: %s\n", ft_itoa(156));
-// 	// system("leaks a.out");
-// 	return (0);
-// }

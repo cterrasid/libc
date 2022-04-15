@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Writes 's' in the given 'fd' (file descriptor), followed by a linebreak.	  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
@@ -21,11 +17,3 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-
-// int	main(void)
-// {
-// 	char	s[] = "Hola 42";
-// 	int fd = 1;
-// 	ft_putendl_fd(s, fd);
-// 	return (0);
-// }

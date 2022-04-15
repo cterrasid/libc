@@ -10,12 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Returns a pointer to a null-terminated byte string, which is a duplicate	  */
-/* of the string pointed by 's'.											  */
-/* The memory obtained  is done dynamically using malloc().					  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
@@ -31,14 +25,3 @@ char	*ft_strdup(const char *s)
 	d[len] = '\0';
 	return (d);
 }
-
-// int	main(void)
-// {
-// 	const char 	s[] = "Caramba";
-// 	char	*mine = ft_strdup(s);
-// 	char	*original = strdup(s);
-// 	printf("Original: %s\n", original);
-// 	printf("Mine: %s\n", mine);
-// 	system("leaks a.out");
-// 	return (0);
-// }

@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Copies 'n' bytes of the memory area pointed by 'src', to the memory area	  */
-/* pointed by 'dest'.														  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
@@ -35,16 +30,3 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		ft_memcpy(dest, src, len);
 	return (dest);
 }
-
-// int	main(void)
-// {
-// 	// char	dest1[] = "Testing";
-// 	// char	src1[] = "Mango";
-// 	char	dest2[] = "Testing";
-// 	char	src2[] = "Mango";
-// 	size_t	n = 5;
-// 	// printf("Original: :%s:\n", memmove(dest1, src1, n));
-// 	printf("Mine: :%s:\n", ft_memmove(dest2, src2, n));
-// 	// system("leaks a.out");
-// 	return (0);
-// }

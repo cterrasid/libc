@@ -10,13 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Takes an element as a parameter and frees the memory of the element's	  */
-/* content using the function 'del' (given as parameter).					  */
-/* Finally, frees the memory of the element.								  */
-/* The memory of 'next' must not be freed.									  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
@@ -24,19 +17,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
-
-// void	del(void *el)
-// {
-// 	free(el);
-// }
-
-// int	main(void)
-// {
-// 	t_list	*node = ft_lstnew("Node");
-// 	t_list	*lst = ft_lstnew("Lst");
-
-// 	ft_lstadd_front(&lst, node);
-// 	ft_lstdelone(lst, del);
-// 	printf("%s\n", lst->next);
-// 	return (0);
-// }

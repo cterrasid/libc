@@ -16,8 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
-# include <string.h>
+
 /**
 * @brief Transform the first numeric characters of a string 'nptr' in numbers.
 */

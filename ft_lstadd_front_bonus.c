@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Add the element 'new' to the beginning of the list.					      */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
@@ -21,13 +17,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-
-// int	main(void)
-// {
-// 	t_list	*head = ft_lstnew("Terrasi");
-// 	t_list	*node = ft_lstnew("Clarette");
-
-// 	ft_lstadd_front(&head, node);
-// 	printf("%s\n", head->content);
-// 	return (0);
-// }

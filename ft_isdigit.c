@@ -10,22 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* -------------------------------------------------------------------------- */
-/* Checks whether the argument passed is a numeric character or not.		  */
-/* -------------------------------------------------------------------------- */
-
 #include "libft.h"
 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
-
-// int	main(void)
-// {
-// 	int	c = '1';
-// 	printf("Mine: %i\n", ft_isdigit(c));
-// 	// printf("Original: %i\n", isdigit(c));
-	// system("leaks a.out");
-// 	return (0);
-// }
