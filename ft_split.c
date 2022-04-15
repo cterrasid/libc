@@ -6,85 +6,94 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 13:58:55 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/07 13:18:41 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/13 05:34:04 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_words(const char *str, char delim)
+static size_t	ft_count_words(const char *s, char c)
 {
 	size_t	count;
 	int		state;
 
 	count = 0;
 	state = 0;
-	while (*str)
+	while (*s)
 	{
-		if (*str == delim)
+		if (*s == c)
 			state = 0;
 		else if (state == 0)
 		{
 			state = 1;
 			count++;
 		}
-		str++;
+		s++;
 	}
 	return (count);
 }
 
-static void	*ft_free_memory(unsigned int i, char *str)
+static char	*ft_get_word(char const *s, char c)
 {
-	while (i)
+	size_t	i;
+	size_t	len;
+	char	*word;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		free(str[i]);
-		i--;
+		word[i] = s[i];
+		i++;
 	}
-	free(str);
-	return (NULL);
+	word[i] = '\0';
+	return (word);
 }
 
-static char	*ft_get_word(unsigned int i, const char *str, char delim, char **result)
+static char	*ft_set_word(int i, char const *s, char c, char **result)
 {
-	const char	*word;
-
-	word = str;
-	while (*word && *word != delim)
-		word++;
-	result[i] = ft_substr(str, 0, (word - str));
+	result[i] = ft_get_word(s, c);
 	if (!result[i])
 	{
-		ft_free_memory(i, result[i]);
+		while (i > 0)
+		{
+			i--;
+			free(result[i]);
+		}
+		free(result);
 		return (NULL);
 	}
 	return (result[i]);
 }
 
-char	**ft_split(const char *str, char delim)
+char	**ft_split(char const *s, char c)
 {
-	char			**result;
-	size_t			words;
-	unsigned int	i;
+	char	**result;
+	size_t	words;
+	size_t	i;
 
-	if (str && delim)
+	if (!s)
+		return (NULL);
+	i = 0;
+	words = ft_count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	while (i < words)
 	{
-		i = 0;
-		words = ft_count_words(str, delim);
-		result = (char **)malloc(sizeof(char *) * (words + 1));
-		if (!result)
-			return (NULL);
-		while (i < words)
-		{
-			while (*str == delim)
-				str++;
-			if (*str)
-				result[i] = ft_get_word(i, str, delim, result);
-			while (*str && *str != delim)
-				str++;
-			i++;
-		}
-		result[i] = 0;
-		return (result);
+		while (*s == c)
+			s++;
+		if (*s)
+			result[i] = ft_set_word(i, s, c, result);
+		while (*s && *s != c)
+			s++;
+		i++;
 	}
-	return (NULL);
+	result[i] = 0;
+	return (result);
 }
