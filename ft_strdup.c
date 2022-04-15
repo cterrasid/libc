@@ -21,14 +21,14 @@
 char	*ft_strdup(const char *s)
 {
 	char	*d;
-	size_t	s_len;
+	size_t	len;
 
-	s_len = ft_strlen(s);
-	d = (char *)malloc(sizeof(char) * s_len + 1);
+	len = ft_strlen(s);
+	d = (char *)malloc(sizeof(char) * len + 1);
 	if (d == NULL)
 		return (NULL);
-	ft_memcpy(d, s, s_len);
-	d[s_len] = '\0';
+	ft_memcpy(d, s, len);
+	d[len] = '\0';
 	return (d);
 }
 

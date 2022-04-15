@@ -31,14 +31,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 
-// void test(unsigned int i, char * s) {
+// void *test(unsigned int i, char * s) {
 // 	*s += i;
 // }
 
 // int main(void)
 // {
-//	 char	s[] = "Caracol";
-//	 ft_striteri(s, test);
-//	 printf("%s\n", s);
-//	 return (0);
+// 	 char	s[] = "Caracol";
+// 	 ft_striteri(s, test);
+// 	 printf("%s\n", s);
+// 	 return (0);
 // }
