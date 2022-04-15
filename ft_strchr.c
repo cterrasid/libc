@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 07:37:49 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/02 17:42:27 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/13 00:41:40 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	char	*s;
-	char	*c;
-
-	s = str;
-	c = ch;
-	while (*s)
+	while (*str)
 	{
-		if (*s == c)
-			return (s);
-		s++;
+		if (*str == (char)ch)
+			return ((char *)str);
+		str++;
 	}
-	if (c == '\0')
-		return (s);
+	if (ch == '\0')
+		return ((char *)str);
 	return (NULL);
 }
