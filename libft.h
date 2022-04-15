@@ -6,7 +6,7 @@
 /*   By: cterrasi <cterrasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:45:56 by cterrasi          #+#    #+#             */
-/*   Updated: 2022/04/08 18:18:31 by cterrasi         ###   ########.fr       */
+/*   Updated: 2022/04/13 05:25:27 by cterrasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,16 +167,6 @@ char	*ft_strrchr(const char *str, int ch);
 
 /**
 * @brief Compares at most the first 'n' bytes of 's1' and 's2'.
-* @param s1	The string to compare with 's2'.
-* @param s2	The string to compare with 's1'.
-* @param n	The bytes to consider for the comparison.
-* @returns
-* - An int lower than 0, if 'n' bytes of 's1' are lower
-* than 'n' bytes of 's2'.
-* - An int bigger than 0, if 'n' bytes of 's1' are bigger
-* than 'n' bytes of 's2'.
-* - An int equal to 0, if 'n' is equal to zero
-* or if 's1' and 's2' are equal.
 */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
@@ -235,11 +225,11 @@ char	*ft_strtrim(const char *s1, const char *set);
 
 /**
 * @brief Split a string 's' into parts, according to a delimiter 'c'.
-* @param str String to split.
-* @param delim Delimiter.
+* @param s String to split.
+* @param c Delimiter.
 * @returns Pointer to an array of splitted words.
 */
-char	**ft_split(const char *str, char delim);
+char	**ft_split(const char *s, char c);
 
 /**
 * @brief Allocates memory with malloc() and transform a number 'n' into a string.
